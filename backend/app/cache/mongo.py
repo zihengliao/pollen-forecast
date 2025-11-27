@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import os
 
-mongo = MongoClient(os.getenv("MONGO_URL"))
+mongo = MongoClient(os.getenv("mongodb://localhost:27017"))
 db = mongo["pollen"]
 collection = db["cache"]
 

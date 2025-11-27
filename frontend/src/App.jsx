@@ -1,18 +1,26 @@
-import { useEffect, useState } from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    fetch("http://localhost:8000/")
-      .then(res => res.json())
-      .then(data => setMessage(data.message));
-  }, []);
-
   return (
-    <div>
-      <h1>React + FastAPI</h1>
-      <p>{message}</p>
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <MapContainer
+        center={[-37.8136, 144.9631]} // Melbourne
+        zoom={6}
+        style={{ width: "100%", height: "100%" }}
+      >
+        <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+
+        {/* Pollen tiles served by FastAPI */}
+        <TileLayer
+          url="http://localhost:8000/pollen/GRASS_UPI/{z}/{x}/{y}"
+          tileSize={256}
+          maxZoom={16}
+          minZoom={3}
+          opacity={0.8}
+        />
+        
+      </MapContainer>
     </div>
   );
 }

@@ -1,16 +1,25 @@
 import requests
-from app.cache.mongo import save_cache, load_cache
+from fastapi import HTTPException, Response
+import os
+from dotenv import load_dotenv
 
-GOOGLE_URL = "https://airquality.googleapis.com/...your-url..."
+load_dotenv()
+GOOGLE_POLLEN_API_KEY = os.getenv("GOOGLE_POLLEN_API_KEY")
 
-def fetch_google_pollen():
-    cached = load_cache()
-    if cached:
-        return cached
-    return {"error": "No cached data yet"}
+def fetch_pollen_tile(tile_type: str, z: int, x: int, y: int):
+    url = (
+        f"https://pollen.googleapis.com/v1/mapTypes/{tile_type}/heatmapTiles/"
+        f"{z}/{x}/{y}?key={GOOGLE_POLLEN_API_KEY}"
+    )
 
-def fetch_and_cache_pollen():
-    print("Refreshing pollen...")
-    response = requests.get(GOOGLE_URL)
-    data = response.json()
-    save_cache(data)
+    resp = requests.get(url)
+
+    # If Google returns an error, raise it
+    if resp.status_code != 200:
+        raise HTTPException(
+            status_code=resp.status_code,
+            detail=resp.text
+        )
+
+    # Return raw PNG bytes
+    return Response(content=resp.content, media_type="image/png")
