@@ -12,9 +12,7 @@ export default function Legend() {
 
       const grades = [0, 1, 2, 3, 4, 5];
       const colors = ["#D3D3D3", "#008000", "#32CD32", "#FFFF00", "#FFA500", "#FF4500"];
-      const labels = ["None", "Very Low", "Low", "Moderate", "High", "Very High"];
-
-      div.innerHTML += "<h4>Pollen Level</h4>";
+      const labels = ["No Data", "Very Low", "Low", "Moderate", "High", "Very High"];
 
       for (let i = 0; i < grades.length; i++) {
         div.innerHTML +=
