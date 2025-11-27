@@ -1,0 +1,31 @@
+.pollen-legend {
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  font-size: 13px;
+  line-height: 18px;
+  color: #000;               /* <-- ADD THIS */
+  display: block;            /* <-- ADD THIS */
+}
+
+.legend-label {
+  color: #000;               /* <-- ADD THIS */
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 6px;
+  border: 1px solid #333;    /* <-- optional, helps visibility */
+}

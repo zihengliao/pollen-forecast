@@ -1,5 +1,13 @@
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Legend from "./Legend";
+
+function MapWithLegend() {
+  const map = useMap();
+  window.mapInstance = map; // expose map instance globally for legend
+  return null;
+}
+
 
 function App() {
   return (
@@ -9,6 +17,9 @@ function App() {
         zoom={6}
         style={{ width: "100%", height: "100%" }}
       >
+        <MapWithLegend />
+        <Legend />
+
         <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"/>
 
         {/* Pollen tiles served by FastAPI */}
