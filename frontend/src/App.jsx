@@ -1,6 +1,8 @@
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
+import { useState } from "react";
 import "leaflet/dist/leaflet.css";
 import Legend from "./Legend";
+import Tabs from "./Tabs";
 
 function MapWithLegend() {
   const map = useMap();
@@ -10,8 +12,15 @@ function MapWithLegend() {
 
 
 function App() {
+
+  const [mode, setMode] = useState("heatmap");
+
+
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
+
+      <Tabs current={mode} onChange={setMode} />
+
       <MapContainer
         center={[-37.8136, 144.9631]} // Melbourne
         zoom={6}
