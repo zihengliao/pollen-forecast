@@ -5,12 +5,12 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
   font-size: 13px;
   line-height: 18px;
-  color: #000;               /* <-- ADD THIS */
-  display: block;            /* <-- ADD THIS */
+  color: #000;               
+  display: block;            
 }
 
 .legend-label {
-  color: #000;               /* <-- ADD THIS */
+  color: #000;               
   font-size: 13px;
   margin-left: 4px;
 }
@@ -27,5 +27,5 @@
   border-radius: 3px;
   display: inline-block;
   margin-right: 6px;
-  border: 1px solid #333;    /* <-- optional, helps visibility */
+  border: 1px solid #353535;    
 }
