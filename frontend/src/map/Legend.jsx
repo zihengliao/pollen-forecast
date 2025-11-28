@@ -13,7 +13,7 @@ export default function Legend() {
       const div = L.DomUtil.create("div", "pollen-legend");
 
       const colors = ["#D3D3D3", "#008000", "#32CD32", "#FFFF00", "#FFA500", "#FF4500"];
-      const labels = ["No Data", "Very Low", "Low", "Moderate", "High", "Very High"];
+      const labels = ["None", "Very Low", "Low", "Moderate", "High", "Very High"];
 
       for (let i = 0; i < labels.length; i++) {
         div.innerHTML += `

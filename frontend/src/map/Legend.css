@@ -29,3 +29,10 @@
   margin-right: 6px;
   border: 1px solid #353535;    
 }
+
+.forecast-label {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ccc;
+}
