@@ -1,49 +1,31 @@
 import { useState, useEffect } from "react";
+import "./BottomDrawer.css";
 
-export default function BottomDrawer({ marker }) {
+export default function BottomDrawer({ marker, forecast }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  // When marker changes, auto-open drawer
   useEffect(() => {
     if (marker) setIsOpen(true);
   }, [marker]);
 
-  if (!marker || !isOpen) return null;
+  if (!marker || !forecast || !isOpen) return null;
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        bottom: 0,
-        left: 0,
-        width: "100%",
-        height: "25vh",
-        background: "#000000e1",
-        padding: "20px",
-        borderTop: "1px solid #ccc",
-        backdropFilter: "blur(6px)",
-        boxShadow: "0 -2px 10px rgba(0,0,0,0.2)",
-        zIndex: 1000,
-      }}
-    >
-      <button
-        onClick={() => setIsOpen(false)}
-        style={{
-          position: "absolute",
-          top: 10,
-          right: 45,
-          background: "transparent",
-          border: "none",
-          fontSize: "20px",
-          cursor: "pointer",
-        }}
-      >
+    <div className="drawer">
+      <button className="drawer-close" onClick={() => setIsOpen(false)}>
         ✖
       </button>
 
-      <strong>📍 Selected Location</strong>
-      <div>Latitude: {marker.lat.toFixed(6)}</div>
-      <div>Longitude: {marker.lng.toFixed(6)}</div>
+      <strong className="drawer-title">🌿 5-Day Grass Pollen Forecast</strong>
+
+      <div className="forecast-container">
+        {Object.entries(forecast).map(([date, value]) => (
+          <div className="forecast-card" key={date}>
+            <div className="forecast-date">{date}</div>
+            <div className="forecast-value">{value}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

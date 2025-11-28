@@ -8,6 +8,8 @@ import "leaflet/dist/leaflet.css";
 
 function MapWrapper() {
   const [marker, setMarker] = useState(null);
+  const [forecast, setForecast] = useState(null);
+
 
   return (
     <div style={{ width: "100%", height: "100%", position: "relative", overflow: "hidden",}}>
@@ -19,7 +21,7 @@ function MapWrapper() {
         <Legend />
 
         {/* Listen for map clicks */}
-        <MapClickHandler onClick={setMarker} />
+        <MapClickHandler onClick={setMarker} onForecast={setForecast} />
 
         {/* Base map */}
         <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -38,7 +40,7 @@ function MapWrapper() {
       </MapContainer>
 
       {/* Bottom Drawer */}
-      <BottomDrawer marker={marker} />
+      <BottomDrawer marker={marker} forecast={forecast} />
     </div>
   );
 }
