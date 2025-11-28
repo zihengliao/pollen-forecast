@@ -2,7 +2,6 @@ import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import { useState } from "react";
 import "leaflet/dist/leaflet.css";
 import Legend from "./Legend";
-import Tabs from "./Tabs";
 
 function MapWithLegend() {
   const map = useMap();
