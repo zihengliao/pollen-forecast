@@ -19,8 +19,6 @@ function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
 
-      <Tabs current={mode} onChange={setMode} />
-
       <MapContainer
         center={[-37.8136, 144.9631]} // Melbourne
         zoom={6}
