@@ -64,7 +64,7 @@ def extract_grass_forecast(pollen_data, latitude, longitude):
             latitude,
             longitude,
             datetime(d['year'], d['month'], d['day'], time.hour, time.minute, time.second)    # im including hour, min for accurate day conversion
-        )[0].strftime("%Y-%m-%d")
+        )[0].strftime("%d/%m/%Y")
         if grass_value is not None:
             result[day] = grass_value
 
@@ -87,6 +87,6 @@ def utc_to_local(lat, lng, utc_datetime):
 
 
 ##TODO
-# need to change UTC time to local time based on lat lng
-# fix UI
-# 12:59pm utc equates to 11:59pm aedt the same date
+# fix UI -> fix to dd/mm/yyyy. make the bottom drawer smaller
+# play around with white vs black background
+# look into the way we call api. if 1000 people use it at the same time will it break?
