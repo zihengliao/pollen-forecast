@@ -13,4 +13,4 @@ def get_tile(tile_type: str, z: int, x: int, y: int):
 @router.get("/forecast")
 def forecast(lat: float, lng: float):
     data = fetch_and_cache_pollen(lat, lng)
-    return extract_grass_forecast(data)
+    return extract_grass_forecast(data, lat, lng)
