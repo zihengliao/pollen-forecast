@@ -85,8 +85,3 @@ def utc_to_local(lat, lng, utc_datetime):
 
     return local_dt, timezone_name
 
-
-##TODO
-# fix UI -> fix to dd/mm/yyyy. make the bottom drawer smaller
-# play around with white vs black background
-# look into the way we call api. if 1000 people use it at the same time will it break?
