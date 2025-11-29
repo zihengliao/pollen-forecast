@@ -17,7 +17,7 @@ export default function BottomDrawer({ marker, forecast }) {
         ✖
       </button>
 
-      <strong className="drawer-title">🌿 5-Day Grass Pollen Forecast</strong>
+      <strong className="drawer-title">5-Day Grass Pollen Forecast</strong>
 
       <div className="forecast-container">
         {Object.entries(forecast).map(([date, value]) => (

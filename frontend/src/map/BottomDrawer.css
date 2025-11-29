@@ -1,71 +1,83 @@
+/* Drawer */
 .drawer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25vh;
+  height: 17vh;
   background: #000000e1;
-  padding: 20px;
+  padding: 2vh 1vw 0;
   backdrop-filter: blur(6px);
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-  color: rgb(100, 100, 100);
+  box-shadow: 0 -0.3vh 2vh rgba(0,0,0,0.3);
+  color: rgb(180, 180, 180);
   overflow: hidden;
   z-index: 1000;
 }
 
+/* Close button */
 .drawer-close {
   position: absolute;
-  top: 10px;
-  right: 45px;
+  top: 1.5vh;
+  right: 4vw;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: clamp(0.8rem, 2.2vh, 1.3rem);
   cursor: pointer;
   color: white;
 }
 
+/* Drawer title */
 .drawer-title {
   display: block;
-  margin-bottom: 10px;
-  font-size: 16px;
+  margin-bottom: 1vh;
+  font-size: clamp(0.8rem, 1.8vh, 1.2rem);
   font-weight: 600;
+  color: #ffffff;
 }
 
-/* Horizontal container */
+/* Forecast layout */
 .forecast-container {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  justify-content: space-evenly;;   /* center group of cards */
+  align-items: center;
   width: 100%;
-  margin-top: 10px;
-  gap: 10px;
+  margin-top: 1.2vh;
+  gap: 1.5vw;
+  flex-wrap: nowrap;         /* keep all 5 in single row */
+  gap: 0;
 }
 
-/* Individual forecast blocks */
+/* Forecast card */
 .forecast-card {
-  flex: 1;
-  background: #ffffff00;
-  /* border: 1px solid #333; */
-  border-radius: 8px;
-  padding: 12px;
+  flex: 0 1 16%;   /* each card takes ~16% width */
+  max-width: 18%;  /* prevents overflow */
+  background: transparent;
+  /* border: 1px solid white; */
+  border-radius: 1vh;
+  padding: 1vh 0.7vw;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* box-shadow: 0 2px 6px rgba(0,0,0,0.4); */
 }
 
-/* Date text */
+/* Date */
 .forecast-date {
-  font-size: 14px;
+  font-size: clamp(0.45rem, 1.2vh, 0.9rem);
   font-weight: 600;
   color: #ccc;
-  margin-bottom: 6px;
+  margin-bottom: 0.4vh;
 }
 
-/* Pollon value */
+/* Value */
 .forecast-value {
-  font-size: 22px;
+  font-size: clamp(0.6rem, 2.4vh, 1.4rem);
   font-weight: bold;
-  color: #4CAF50; /* default green */
+}
+
+/* Label (e.g., Low, Moderate, High) */
+.forecast-label {
+  margin-top: 0.3vh;
+  font-size: clamp(0.45rem, 1.3vh, 0.9rem);
+  font-weight: 500;
 }
