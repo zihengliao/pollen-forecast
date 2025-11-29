@@ -1,38 +1,42 @@
+/* Legend container */
 .pollen-legend {
   background: white;
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-  font-size: 13px;
-  line-height: 18px;
-  color: #000;               
-  display: block;       
+  padding: clamp(0.4rem, 1vh, 1rem);       /* scales padding */
+  border-radius: 0.6rem;                   /* roundness scales naturally */
+  box-shadow: 0 0 0.6rem rgba(0,0,0,0.3);
+  font-size: clamp(0.6rem, 1.2vw, 1rem);   /* fluid text scaling */
+  line-height: 1.4em;                      
+  color: #000;
+  display: block;
 }
 
+/* "Low / Moderate / High" labels */
 .legend-label {
-  color: #000;               
-  font-size: 13px;
-  margin-left: 4px;
+  color: #000;
+  font-size: clamp(0.6rem, 1.2vw, 1rem);
+  margin-left: clamp(0.2rem, 0.4vw, 0.5rem);
 }
 
+/* Each row inside legend */
 .legend-item {
   display: flex;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: clamp(0.2rem, 0.4vh, 0.5rem);
 }
 
+/* Colored square */
 .legend-color {
-  width: 18px;
-  height: 18px;
-  border-radius: 3px;
-  display: inline-block;
-  margin-right: 6px;
-  border: 1px solid #353535;    
+  width: clamp(0.8rem, 1.8vh, 1.2rem);
+  height: clamp(0.8rem, 1.8vh, 1.2rem);
+  border-radius: 0.3rem;
+  margin-right: clamp(0.2rem, 0.5vw, 0.5rem);
+  border: 1px solid #353535;
 }
 
+/* Forecast label under value (Low / High, etc.) */
 .forecast-label {
-  margin-top: 4px;
-  font-size: 14px;
+  margin-top: clamp(0.1rem, 0.3vh, 0.4rem);
+  font-size: clamp(0.6rem, 1.4vw, 1.1rem);
   font-weight: 500;
   color: #ccc;
 }
