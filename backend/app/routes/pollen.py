@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from app.services.google_pollen import fetch_pollen_tile
 from fastapi import APIRouter
-from app.services.google_pollen import fetch_and_cache_pollen, extract_grass_forecast
+from app.services.google_pollen import fetch_pollen_forecast, extract_grass_forecast
 
 router = APIRouter()
 
@@ -12,5 +12,4 @@ def get_tile(tile_type: str, z: int, x: int, y: int):
 
 @router.get("/forecast")
 def forecast(lat: float, lng: float):
-    data = fetch_and_cache_pollen(lat, lng)
-    return extract_grass_forecast(data, lat, lng)
+    return fetch_pollen_forecast(lat, lng)

@@ -7,7 +7,7 @@ class CacheManager:
         mongo = MongoClient(os.getenv("mongodb://localhost:27017"))
         self.db = mongo["pollen"]
 
-    # debating whether to add abstract methods + attributes but dont think its importance rn is minimal
+    # debating whether to define abstract methods + attributes but importance rn is minimal
 
 
 class TilesCache(CacheManager):

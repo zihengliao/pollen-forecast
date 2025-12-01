@@ -5,12 +5,25 @@ from dotenv import load_dotenv
 from timezonefinder import TimezoneFinder
 from datetime import datetime, timezone
 import pytz
+from ..cache.mongo import TilesCache
+from ..cache.mongo import ForecastCache
+import geohash
+
+forecast_cache = ForecastCache()
+tiles_cache = TilesCache()
 
 
 load_dotenv()
 GOOGLE_POLLEN_API_KEY = os.getenv("GOOGLE_POLLEN_API_KEY")
 
 def fetch_pollen_tile(tile_type: str, z: int, x: int, y: int):
+
+    # lets see if we have it cached
+    cached = tiles_cache.load_cache(tile_type, z, x, y)
+    if cached:
+        return Response(content=cached, media_type="image/png")
+    
+    # if not, fetch from google
     url = (
         f"https://pollen.googleapis.com/v1/mapTypes/{tile_type}/heatmapTiles/"
         f"{z}/{x}/{y}?key={GOOGLE_POLLEN_API_KEY}"
@@ -24,12 +37,21 @@ def fetch_pollen_tile(tile_type: str, z: int, x: int, y: int):
             status_code=resp.status_code,
             detail=resp.text
         )
+    
+    tiles_cache.save_cache(tile_type, z, x, y, resp.content)
 
     # Return raw PNG bytes
     return Response(content=resp.content, media_type="image/png")
 
 
-def fetch_and_cache_pollen(lat, lng):
+def fetch_pollen_forecast(lat, lng):
+
+    # check cache first
+    h = geohash.encode(lat, lng, precision=6)
+    cached = forecast_cache.load_cache(h)
+    if cached:
+        return cached
+    
     print("Refreshing pollen...")
 
     url = f"https://pollen.googleapis.com/v1/forecast:lookup?key={GOOGLE_POLLEN_API_KEY}"
@@ -44,7 +66,11 @@ def fetch_and_cache_pollen(lat, lng):
     print("STATUS:", response.status_code)
     print("URL:", response.request.url)
 
-    return response.json()
+    data = response.json()
+    forecast_data = extract_grass_forecast(data, lat, lng)
+    forecast_cache.save_cache(h, forecast_data)
+    
+    return forecast_data
 
 
 def extract_grass_forecast(pollen_data, latitude, longitude):
