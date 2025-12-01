@@ -29,14 +29,18 @@ def fetch_pollen_tile(tile_type: str, z: int, x: int, y: int):
         f"{z}/{x}/{y}?key={GOOGLE_POLLEN_API_KEY}"
     )
 
-    resp = requests.get(url)
-
-    # If Google returns an error, raise it
-    if resp.status_code != 200:
-        raise HTTPException(
-            status_code=resp.status_code,
-            detail=resp.text
-        )
+    try:
+        resp = requests.get(url)
+    except Exception as e:
+        # If Google returns an error, raise it
+        if resp.status_code != 200:
+            raise HTTPException(
+                status_code=resp.status_code,
+                detail=resp.text
+            )
+        print("Error fetching pollen map tile:", e)
+        print("STATUS:", resp.status_code)
+        print("URL:", resp.request.url)
     
     tiles_cache.save_cache(tile_type, z, x, y, resp.content)
 
@@ -62,9 +66,18 @@ def fetch_pollen_forecast(lat, lng):
         "days": 5
     }
 
-    response = requests.get(url, params=body)
-    print("STATUS:", response.status_code)
-    print("URL:", response.request.url)
+    try:
+        response = requests.get(url)
+    except Exception as e:
+        # If Google returns an error, raise it
+        if response.status_code != 200:
+            raise HTTPException(
+                status_code=response.status_code,
+                detail=response.text
+            )
+        print("Error fetching pollen forecast:", e)
+        print("STATUS:", response.status_code)
+        print("URL:", response.request.url)
 
     data = response.json()
     forecast_data = extract_grass_forecast(data, lat, lng)
