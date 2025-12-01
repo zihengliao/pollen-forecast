@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import L from "leaflet";
-import "./legend.css";
+import "./Legend.css";
 
 export default function Legend() {
   const map = useMap(); // <-- ALWAYS provides the actual map safely

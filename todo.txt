@@ -1,5 +1,6 @@
-limit view to just australia and newzealand
-i need to add try catch statements for debugging
-need to write tests
-create ci/cd pipeline
-test in prod
+- limit view to just australia and newzealand
+- i need to add try catch statements for debugging
+- need to write tests
+- create ci/cd pipeline
+- test in prod
+- set a rate limit to prevent spam and bots
