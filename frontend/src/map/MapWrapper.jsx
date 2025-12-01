@@ -9,6 +9,7 @@ import "leaflet/dist/leaflet.css";
 function MapWrapper() {
   const [marker, setMarker] = useState(null);
   const [forecast, setForecast] = useState(null);
+  const API = import.meta.env.VITE_API_URL;
 
 
   return (
@@ -28,7 +29,7 @@ function MapWrapper() {
 
         {/* Pollen Heatmap */}
         <TileLayer
-          url="http://localhost:8000/pollen/GRASS_UPI/{z}/{x}/{y}"
+          url={`${API}/pollen/GRASS_UPI/{z}/{x}/{y}`}
           tileSize={256}
           maxZoom={16}
           minZoom={3}

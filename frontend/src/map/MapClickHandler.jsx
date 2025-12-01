@@ -1,6 +1,8 @@
 import { useMapEvent } from "react-leaflet";
 
 function MapClickHandler({ onClick, onForecast }) {
+  const API = import.meta.env.VITE_API_URL;
+
   useMapEvent("click", (e) => {
     const lat = e.latlng.lat;
     const lng = e.latlng.lng;
@@ -9,7 +11,7 @@ function MapClickHandler({ onClick, onForecast }) {
     onClick({ lat, lng });
 
     // Fetch backend forecast
-    fetch(`http://localhost:8000/forecast?lat=${lat}&lng=${lng}`)
+    fetch(`${API}/forecast?lat=${lat}&lng=${lng}`)
       .then((res) => res.json())
       .then((data) => {
         onForecast(data);   // Store forecast in state
