@@ -47,7 +47,7 @@ def fetch_pollen_tile(tile_type: str, z: int, x: int, y: int):
 def fetch_pollen_forecast(lat, lng):
 
     # check cache first
-    h = geohash.encode(lat, lng, precision=6)
+    h = geohash.encode(lat, lng, precision=5)
     cached = forecast_cache.load_cache(h)
     if cached:
         return cached
