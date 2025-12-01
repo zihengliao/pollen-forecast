@@ -1,17 +1,54 @@
 from pymongo import MongoClient
 import os
+import time
 
-mongo = MongoClient(os.getenv("mongodb://localhost:27017"))
-db = mongo["pollen"]
-collection = db["cache"]
+class CacheManager:
+    def __init__(self):
+        mongo = MongoClient(os.getenv("mongodb://localhost:27017"))
+        self.db = mongo["pollen"]
 
-def save_cache(data):
-    collection.update_one(
-        {"_id": "latest"},
-        {"$set": {"data": data}},
-        upsert=True
-    )
+    # debating whether to add abstract methods + attributes but dont think its importance rn is minimal
 
-def load_cache():
-    doc = collection.find_one({"_id": "latest"})
-    return doc["data"] if doc else None
+
+class TilesCache(CacheManager):
+    def __init__(self):
+        super().__init__()
+        self.collection = self.db["tiles_cache"]
+        self.TILE_TTL = 60 * 60 * 12      # 0.5 day
+
+    def save_cache(self, tile_type, z, x, y, data):
+        self.collection.update_one(
+            {"_id": f"{tile_type}_{z}_{x}_{y}"},
+            {"$set": {"data": data}},
+            upsert=True
+        )
+
+    def load_cache(self, tile_type, z, x, y):
+        doc = self.collection.find_one({"_id": f"{tile_type}_{z}_{x}_{y}"})
+        return doc["data"] if doc else None
+    
+
+class ForecastCache(CacheManager):
+    def __init__(self):
+        super().__init__()
+        self.collection = self.db["forecast_cache"]
+        self.FORECAST_TTL = 60 * 60       # 1 hour
+    
+    def load_cache(self, geohash):
+        key = geohash
+        doc = self.collection.find_one({"_id": key})
+        if not doc:
+            return None
+
+        if time.time() - doc["timestamp"] > self.FORECAST_TTL:
+            return None
+
+        return doc["data"]
+
+    def save_cache(self, geohash, forecast_json):
+        key = geohash
+        self.collection.update_one(
+            {"_id": key},
+            {"$set": {"data": forecast_json, "timestamp": time.time()}},
+            upsert=True
+        )
