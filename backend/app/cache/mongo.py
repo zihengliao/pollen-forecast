@@ -1,10 +1,13 @@
 from pymongo import MongoClient
 import os
 import time
+from dotenv import load_dotenv
 
+
+load_dotenv()
 class CacheManager:
     def __init__(self):
-        mongo = MongoClient(os.getenv("mongodb://localhost:27017"))
+        mongo = MongoClient(os.getenv("MONGO_URL"))
         self.db = mongo["pollen"]
 
     # debating whether to define abstract methods + attributes but importance rn is minimal
