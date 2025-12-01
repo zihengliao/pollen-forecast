@@ -22,7 +22,7 @@ class TilesCache(CacheManager):
     def save_cache(self, tile_type, z, x, y, data):
         self.collection.update_one(
             {"_id": f"{tile_type}_{z}_{x}_{y}"},
-            {"$set": {"data": data}, "timestamp": time.time()},
+            {"$set": {"data": data, "timestamp": time.time()}},
             upsert=True
         )
 
