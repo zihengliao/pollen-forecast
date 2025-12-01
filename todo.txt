@@ -1,0 +1,5 @@
+
+i need to add try catch statements for debugging
+need to write tests
+create ci/cd pipeline
+test in prod
