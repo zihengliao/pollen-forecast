@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { POLLEN_LEVELS } from "../constants/pollenEnum";
+import { POLLEN_LEVELS } from "../constants/pollenENUM";
 import "./BottomDrawer.css";
 
 export default function BottomDrawer({ marker, forecast }) {
