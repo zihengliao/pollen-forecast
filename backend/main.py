@@ -10,7 +10,7 @@ start_scheduler()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173",
-                   "https://pollen-forecast.vercel.app/"],
+                   "https://pollen-forecast.vercel.app"],
     allow_credentials=True,  
     allow_methods=["*"],
     allow_headers=["*"]
