@@ -8,6 +8,7 @@ import pytz
 from ..cache.mongo import TilesCache
 from ..cache.mongo import ForecastCache
 import geohash
+from pprint import pprint
 
 forecast_cache = ForecastCache()
 tiles_cache = TilesCache()
@@ -30,22 +31,19 @@ def fetch_pollen_tile(tile_type: str, z: int, x: int, y: int):
     )
 
     try:
-        resp = requests.get(url)
-    except Exception as e:
-        # If Google returns an error, raise it
-        if resp.status_code != 200:
-            raise HTTPException(
-                status_code=resp.status_code,
-                detail=resp.text
-            )
-        print("Error fetching pollen map tile:", e)
-        print("STATUS:", resp.status_code)
-        print("URL:", resp.request.url)
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()  # Raises HTTPError for bad status codes
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching pollen tile: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to fetch pollen forecast tile: {str(e)}"
+        )
     
-    tiles_cache.save_cache(tile_type, z, x, y, resp.content)
+    tiles_cache.save_cache(tile_type, z, x, y, response.content)
 
     # Return raw PNG bytes
-    return Response(content=resp.content, media_type="image/png")
+    return Response(content=response.content, media_type="image/png")
 
 
 def fetch_pollen_forecast(lat, lng):
@@ -67,18 +65,15 @@ def fetch_pollen_forecast(lat, lng):
     }
 
     try:
-        response = requests.get(url)
-    except Exception as e:
-        # If Google returns an error, raise it
-        if response.status_code != 200:
-            raise HTTPException(
-                status_code=response.status_code,
-                detail=response.text
-            )
-        print("Error fetching pollen forecast:", e)
-        print("STATUS:", response.status_code)
-        print("URL:", response.request.url)
-
+        response = requests.get(url, params=body, timeout=5)
+        response.raise_for_status()  # Raises HTTPError for bad status codes
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching pollen forecast: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to fetch pollen forecast data: {str(e)}"
+        )
+        
     data = response.json()
     forecast_data = extract_grass_forecast(data, lat, lng)
     forecast_cache.save_cache(h, forecast_data)
