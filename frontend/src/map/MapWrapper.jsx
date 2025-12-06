@@ -14,10 +14,17 @@ function MapWrapper() {
 
   return (
     <div style={{ width: "100%", height: "100%", position: "relative", overflow: "hidden",}}>
+
+      {/* limiting it to just australia */}
       <MapContainer
         center={[-37.8136, 144.9631]}
         zoom={6}
         style={{ width: "100%", height: "100%" }}
+        maxBounds={[
+          [-45.0, 110.0],   // Southwest corner
+          [-9.0, 157.0]    // Northeast corner
+        ]}
+        maxBoundsViscosity={1.0}
       >
         <Legend />
 
