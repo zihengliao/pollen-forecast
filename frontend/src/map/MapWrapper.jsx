@@ -24,6 +24,7 @@ function MapWrapper() {
           [-45.0, 110.0],   // Southwest corner
           [-9.0, 157.0]    // Northeast corner
         ]}
+        minZoom={5}
         maxBoundsViscosity={1.0}
       >
         <Legend />
