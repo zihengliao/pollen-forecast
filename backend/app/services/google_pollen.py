@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 from timezonefinder import TimezoneFinder
 from datetime import datetime, timezone
 import pytz
-from ..cache.mongo import TilesCache
-from ..cache.mongo import ForecastCache
+from backend.app.cache.mongo import TilesCache
+from backend.app.cache.mongo import ForecastCache
 import geohash
 from pprint import pprint
 
@@ -47,6 +47,13 @@ def fetch_pollen_tile(tile_type: str, z: int, x: int, y: int):
 
 
 def fetch_pollen_forecast(lat, lng):
+
+    # validate lat/lng bounds for australia
+    if not (-45.0 <= lat <= -9.0) or not (110.0 <= lng <= 157.0):
+        raise HTTPException(
+            status_code=400,
+            detail="Coordinates are outside Australia bounds."
+        )
 
     # check cache first
     h = geohash.encode(lat, lng, precision=5)

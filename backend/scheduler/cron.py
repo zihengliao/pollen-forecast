@@ -1,5 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
-from app.services.google_pollen import fetch_pollen_tile
+from backend.app.services.google_pollen import fetch_pollen_tile
 
 
 # def start_scheduler():

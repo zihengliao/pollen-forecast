@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes.pollen import router as pollen_router
-from scheduler.cron import start_scheduler
+from backend.app.routes.pollen import router as pollen_router
+from backend.scheduler.cron import start_scheduler
 
 app = FastAPI()
 start_scheduler()

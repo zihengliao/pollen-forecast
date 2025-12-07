@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from app.services.google_pollen import fetch_pollen_tile
+from backend.app.services.google_pollen import fetch_pollen_tile
 from fastapi import APIRouter
-from app.services.google_pollen import fetch_pollen_forecast, extract_grass_forecast
+from backend.app.services.google_pollen import fetch_pollen_forecast, extract_grass_forecast
 
 router = APIRouter()
 

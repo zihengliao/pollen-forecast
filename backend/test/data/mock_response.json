@@ -1,0 +1,529 @@
+{
+   "regionCode":"AU",
+   "dailyInfo":[
+      {
+         "date":{
+            "year":2025,
+            "month":12,
+            "day":2
+         },
+         "pollenTypeInfo":[
+            {
+               "code":"TREE",
+               "displayName":"Tree",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "healthRecommendations":[
+                  "Pollen levels are very low right now. It's a great day to enjoy the outdoors!"
+               ]
+            },
+            {
+               "code":"GRASS",
+               "displayName":"Grass",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "healthRecommendations":[
+                  "It's important to shower and wash your hair after spending a lot of time outdoors.",
+                  "When spending time outside, use sunglasses and a cap to keep pollen out of your face and eyes.",
+                  "Wash clothes worn outdoors to remove any remnants of pollen grains.",
+                  "If possible, wear glasses instead of contact lenses.",
+                  "Did you hang any laundry outside? Now is a good time to hang clothes indoors or use a dryer if possible."
+               ]
+            }
+         ],
+         "plantInfo":[
+            {
+               "code":"CYPRESS_PINE",
+               "displayName":"Cypress Pine",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "plantDescription":{
+                  "type":"TREE",
+                  "family":"Cupressaceae (the Cypress family)",
+                  "season":"Late winter, early spring",
+                  "specialColors":"None",
+                  "specialShapes":"Evergreen needle leaves. The leaves are scaly and are borne in whorls of three.",
+                  "crossReaction":"Juniper, Cedar and other Cypress pollen. In addition, there may be a higher risk of food allergy to peach.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/cypress_pine_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/cypress_pine_closeup.jpg"
+               }
+            },
+            {
+               "code":"GRAMINALES",
+               "displayName":"Grasses",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "plantDescription":{
+                  "type":"GRASS",
+                  "family":"Poaceae",
+                  "season":"Late spring, summer",
+                  "specialColors":"None",
+                  "specialShapes":"The leaves are alternate, long and narrow and the leaf margin is smooth.",
+                  "crossReaction":"Plantain (Plantago) pollen. In addition, there may be a higher risk for food allergies like melons, oranges, tomatoes, peanuts, soy, potato, and other legumes.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/graminales_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/graminales_closeup.jpg"
+               }
+            }
+         ]
+      },
+      {
+         "date":{
+            "year":2025,
+            "month":12,
+            "day":3
+         },
+         "pollenTypeInfo":[
+            {
+               "code":"TREE",
+               "displayName":"Tree",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "healthRecommendations":[
+                  "Pollen levels are very low right now. It's a great day to enjoy the outdoors!"
+               ]
+            },
+            {
+               "code":"GRASS",
+               "displayName":"Grass",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "healthRecommendations":[
+                  "It's important to shower and wash your hair after spending a lot of time outdoors.",
+                  "When spending time outside, use sunglasses and a cap to keep pollen out of your face and eyes.",
+                  "Wash clothes worn outdoors to remove any remnants of pollen grains.",
+                  "If possible, wear glasses instead of contact lenses.",
+                  "Did you hang any laundry outside? Now is a good time to hang clothes indoors or use a dryer if possible."
+               ]
+            }
+         ],
+         "plantInfo":[
+            {
+               "code":"CYPRESS_PINE",
+               "displayName":"Cypress Pine",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "plantDescription":{
+                  "type":"TREE",
+                  "family":"Cupressaceae (the Cypress family)",
+                  "season":"Late winter, early spring",
+                  "specialColors":"None",
+                  "specialShapes":"Evergreen needle leaves. The leaves are scaly and are borne in whorls of three.",
+                  "crossReaction":"Juniper, Cedar and other Cypress pollen. In addition, there may be a higher risk of food allergy to peach.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/cypress_pine_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/cypress_pine_closeup.jpg"
+               }
+            },
+            {
+               "code":"GRAMINALES",
+               "displayName":"Grasses",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "plantDescription":{
+                  "type":"GRASS",
+                  "family":"Poaceae",
+                  "season":"Late spring, summer",
+                  "specialColors":"None",
+                  "specialShapes":"The leaves are alternate, long and narrow and the leaf margin is smooth.",
+                  "crossReaction":"Plantain (Plantago) pollen. In addition, there may be a higher risk for food allergies like melons, oranges, tomatoes, peanuts, soy, potato, and other legumes.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/graminales_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/graminales_closeup.jpg"
+               }
+            }
+         ]
+      },
+      {
+         "date":{
+            "year":2025,
+            "month":12,
+            "day":4
+         },
+         "pollenTypeInfo":[
+            {
+               "code":"TREE",
+               "displayName":"Tree",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "healthRecommendations":[
+                  "Pollen levels are very low right now. It's a great day to enjoy the outdoors!"
+               ]
+            },
+            {
+               "code":"GRASS",
+               "displayName":"Grass",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":4,
+                  "category":"High",
+                  "indexDescription":"Many people with allergy to pollen are likely to experience symptoms. Very sensitive people may experience severe symptoms",
+                  "color":{
+                     "red":1,
+                     "green":0.54901963
+                  }
+               },
+               "healthRecommendations":[
+                  "Avoid mowing the lawn and raking leaves.",
+                  "When driving the car, close your windows and turn the air conditioning system to recirculation mode.",
+                  "Keep your windows closed and turn on your air purifier or air conditioning.",
+                  "Consider staying indoors during the peak pollen hours (morning and early afternoon)."
+               ]
+            }
+         ],
+         "plantInfo":[
+            {
+               "code":"CYPRESS_PINE",
+               "displayName":"Cypress Pine",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "plantDescription":{
+                  "type":"TREE",
+                  "family":"Cupressaceae (the Cypress family)",
+                  "season":"Late winter, early spring",
+                  "specialColors":"None",
+                  "specialShapes":"Evergreen needle leaves. The leaves are scaly and are borne in whorls of three.",
+                  "crossReaction":"Juniper, Cedar and other Cypress pollen. In addition, there may be a higher risk of food allergy to peach.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/cypress_pine_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/cypress_pine_closeup.jpg"
+               }
+            },
+            {
+               "code":"GRAMINALES",
+               "displayName":"Grasses",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":4,
+                  "category":"High",
+                  "indexDescription":"Many people with allergy to pollen are likely to experience symptoms. Very sensitive people may experience severe symptoms",
+                  "color":{
+                     "red":1,
+                     "green":0.54901963
+                  }
+               },
+               "plantDescription":{
+                  "type":"GRASS",
+                  "family":"Poaceae",
+                  "season":"Late spring, summer",
+                  "specialColors":"None",
+                  "specialShapes":"The leaves are alternate, long and narrow and the leaf margin is smooth.",
+                  "crossReaction":"Plantain (Plantago) pollen. In addition, there may be a higher risk for food allergies like melons, oranges, tomatoes, peanuts, soy, potato, and other legumes.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/graminales_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/graminales_closeup.jpg"
+               }
+            }
+         ]
+      },
+      {
+         "date":{
+            "year":2025,
+            "month":12,
+            "day":5
+         },
+         "pollenTypeInfo":[
+            {
+               "code":"TREE",
+               "displayName":"Tree",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "healthRecommendations":[
+                  "Pollen levels are very low right now. It's a great day to enjoy the outdoors!"
+               ]
+            },
+            {
+               "code":"GRASS",
+               "displayName":"Grass",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "healthRecommendations":[
+                  "It's important to shower and wash your hair after spending a lot of time outdoors.",
+                  "When spending time outside, use sunglasses and a cap to keep pollen out of your face and eyes.",
+                  "Wash clothes worn outdoors to remove any remnants of pollen grains.",
+                  "If possible, wear glasses instead of contact lenses.",
+                  "Did you hang any laundry outside? Now is a good time to hang clothes indoors or use a dryer if possible."
+               ]
+            }
+         ],
+         "plantInfo":[
+            {
+               "code":"CYPRESS_PINE",
+               "displayName":"Cypress Pine",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "plantDescription":{
+                  "type":"TREE",
+                  "family":"Cupressaceae (the Cypress family)",
+                  "season":"Late winter, early spring",
+                  "specialColors":"None",
+                  "specialShapes":"Evergreen needle leaves. The leaves are scaly and are borne in whorls of three.",
+                  "crossReaction":"Juniper, Cedar and other Cypress pollen. In addition, there may be a higher risk of food allergy to peach.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/cypress_pine_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/cypress_pine_closeup.jpg"
+               }
+            },
+            {
+               "code":"GRAMINALES",
+               "displayName":"Grasses",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "plantDescription":{
+                  "type":"GRASS",
+                  "family":"Poaceae",
+                  "season":"Late spring, summer",
+                  "specialColors":"None",
+                  "specialShapes":"The leaves are alternate, long and narrow and the leaf margin is smooth.",
+                  "crossReaction":"Plantain (Plantago) pollen. In addition, there may be a higher risk for food allergies like melons, oranges, tomatoes, peanuts, soy, potato, and other legumes.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/graminales_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/graminales_closeup.jpg"
+               }
+            }
+         ]
+      },
+      {
+         "date":{
+            "year":2025,
+            "month":12,
+            "day":6
+         },
+         "pollenTypeInfo":[
+            {
+               "code":"TREE",
+               "displayName":"Tree",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "healthRecommendations":[
+                  "Pollen levels are very low right now. It's a great day to enjoy the outdoors!"
+               ]
+            },
+            {
+               "code":"GRASS",
+               "displayName":"Grass",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "healthRecommendations":[
+                  "It's important to shower and wash your hair after spending a lot of time outdoors.",
+                  "When spending time outside, use sunglasses and a cap to keep pollen out of your face and eyes.",
+                  "Wash clothes worn outdoors to remove any remnants of pollen grains.",
+                  "If possible, wear glasses instead of contact lenses.",
+                  "Did you hang any laundry outside? Now is a good time to hang clothes indoors or use a dryer if possible."
+               ]
+            }
+         ],
+         "plantInfo":[
+            {
+               "code":"CYPRESS_PINE",
+               "displayName":"Cypress Pine",
+               "inSeason":false,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":1,
+                  "category":"Very Low",
+                  "indexDescription":"People with very high allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "green":0.61960787,
+                     "blue":0.22745098
+                  }
+               },
+               "plantDescription":{
+                  "type":"TREE",
+                  "family":"Cupressaceae (the Cypress family)",
+                  "season":"Late winter, early spring",
+                  "specialColors":"None",
+                  "specialShapes":"Evergreen needle leaves. The leaves are scaly and are borne in whorls of three.",
+                  "crossReaction":"Juniper, Cedar and other Cypress pollen. In addition, there may be a higher risk of food allergy to peach.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/cypress_pine_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/cypress_pine_closeup.jpg"
+               }
+            },
+            {
+               "code":"GRAMINALES",
+               "displayName":"Grasses",
+               "inSeason":true,
+               "indexInfo":{
+                  "code":"UPI",
+                  "displayName":"Universal Pollen Index",
+                  "value":3,
+                  "category":"Moderate",
+                  "indexDescription":"People with allergy to pollen are likely to experience symptoms",
+                  "color":{
+                     "red":1,
+                     "green":1
+                  }
+               },
+               "plantDescription":{
+                  "type":"GRASS",
+                  "family":"Poaceae",
+                  "season":"Late spring, summer",
+                  "specialColors":"None",
+                  "specialShapes":"The leaves are alternate, long and narrow and the leaf margin is smooth.",
+                  "crossReaction":"Plantain (Plantago) pollen. In addition, there may be a higher risk for food allergies like melons, oranges, tomatoes, peanuts, soy, potato, and other legumes.",
+                  "picture":"https://storage.googleapis.com/pollen-pictures/graminales_full.jpg",
+                  "pictureCloseup":"https://storage.googleapis.com/pollen-pictures/graminales_closeup.jpg"
+               }
+            }
+         ]
+      }
+   ]
+}
