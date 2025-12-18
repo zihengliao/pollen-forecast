@@ -4,4 +4,4 @@ backend tests:
 - caching
 - error handling
 - geohash tests
-- 
+- integration testing of mongo
