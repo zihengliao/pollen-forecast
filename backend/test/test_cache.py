@@ -3,6 +3,7 @@ from fastapi.testclient import TestClient
 from backend.main import app
 from datetime import datetime
 import geohash
+import requests
 
 client = TestClient(app)
 
@@ -139,7 +140,7 @@ def test_tile_cache_hit(patched_caches):
     png_bytes = b"\x89PNG\r\n\x1a\n"
     tiles_cache.store[("grass", 1, 2, 3)] = png_bytes
 
-    response = client.get("/tiles/grass/1/2/3")
+    response = client.get("/pollen/grass/1/2/3")
 
     assert response.status_code == 200
     assert response.headers["content-type"] == "image/png"
@@ -161,7 +162,7 @@ def test_tile_cache_miss(patched_caches, monkeypatch):
         mock_tile_fetch
     )
 
-    response = client.get("/tiles/grass/1/2/3")
+    response = client.get("/pollen/grass/1/2/3")
 
     assert response.status_code == 200
     assert tiles_cache.save_calls == 1
@@ -171,14 +172,14 @@ def test_tile_fetch_failure_not_cached(patched_caches, monkeypatch):
     _, tiles_cache = patched_caches
 
     def mock_fail(*args, **kwargs):
-        raise Exception("Google API down")
+        raise requests.exceptions.RequestException("Google API down")
 
     monkeypatch.setattr(
         "backend.app.services.google_pollen.requests.get",
         mock_fail
     )
 
-    response = client.get("/tiles/grass/1/2/3")
+    response = client.get("/pollen/grass/1/2/3")
 
     assert response.status_code == 500
     assert tiles_cache.save_calls == 0
